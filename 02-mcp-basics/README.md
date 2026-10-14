@@ -4,6 +4,10 @@ Cùng tool `get_weather`, nhưng giờ tách ra **MCP server độc lập**. Ser
 tool qua giao thức MCP; bất kỳ client nào (Claude Code, Cursor, hoặc `weather_client.py`)
 cũng cắm vào dùng được — không cần biết code bên trong.
 
+Server còn cung cấp `get_forcast(city: str)` để lấy dự báo **ngày mai** bằng
+dữ liệu giả lập. Client mẫu gọi cả `get_weather` và `get_forcast` cho từng
+thành phố. Tên `get_forcast` được giữ nguyên để sử dụng khi gọi `call_tool`.
+
 ```
 weather_client.py                       weather_server.py
 ┌─────────────┐    giao thức MCP    ┌─────────────────┐
@@ -24,15 +28,25 @@ Kết quả mong đợi:
 ```
 Tools server cung cấp:
   - get_weather: Lấy thời tiết hiện tại của một thành phố.
+  - get_forcast: Lấy dự báo thời tiết ngày mai của một thành phố (dữ liệu giả lập).
 
 call_tool get_weather(city='Hanoi'):
   -> Hanoi: 29°C, trời mưa
 
+call_tool get_forcast(city='Hanoi'):
+  -> Hanoi (ngày mai): 30°C, nhiều mây
+
 call_tool get_weather(city='Danang'):
   -> Danang: 30°C, nhiều mây
 
+call_tool get_forcast(city='Danang'):
+  -> Danang (ngày mai): 32°C, trời nắng
+
 call_tool get_weather(city='Haiphong'):
   -> Haiphong: 33°C, mưa rào
+
+call_tool get_forcast(city='Haiphong'):
+  -> Haiphong (ngày mai): 31°C, mưa rào
 ```
 
 ## Files
