@@ -1,0 +1,21 @@
+<meta charset="utf-8"><style>body{background:#171717;color:#eee;font:16px Consolas,monospace;margin:28px}h1{font:22px Arial;color:#83d6ab}pre{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.4}</style><h1>03a-auth-fail ? captured process output</h1><pre>python auth_client.py
+Exit code: 1
+
+MCP_AUTH_TOKEN=wrong-token
+
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File &quot;C:\Users\tuann\MyStorage\VinUniAI\Phase2\KX-DAY26-NguyenAnhTuan-2A202602700\03-production\auth_client.py&quot;, line 37, in main
+      |     await session.initialize()
+      |   File &quot;C:\Users\tuann\MyStorage\VinUniAI\Phase2\KX-DAY26-NguyenAnhTuan-2A202602700\.venv\Lib\site-packages\mcp\client\session.py&quot;, line 654, in initialize
+      |     result = await self.send_request(
+      |              ^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File &quot;C:\Users\tuann\MyStorage\VinUniAI\Phase2\KX-DAY26-NguyenAnhTuan-2A202602700\.venv\Lib\site-packages\mcp\client\session.py&quot;, line 586, in send_request
+      |     raw = await self._dispatcher.send_raw_request(method, data.get(&quot;params&quot;), opts)
+      |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File &quot;C:\Users\tuann\MyStorage\VinUniAI\Phase2\KX-DAY26-NguyenAnhTuan-2A202602700\.venv\Lib\site-packages\mcp\shared\jsonrpc_dispatcher.py&quot;, line 461, in send_raw_request
+      |     raise MCPError(code=outcome.code, message=outcome.message, data=outcome.data)
+      | mcp.shared.exceptions.MCPError: Server returned an error response
+      +------------------------------------
+
+HTTP verification: 401 Unauthorized</pre>

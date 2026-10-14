@@ -57,7 +57,7 @@ cd mcp-server
 uv sync
 
 # Set your WeatherAPI key (get one free at https://weatherapi.com)
-export WEATHERAPI_KEY="your_weatherapi_key"
+# Set WEATHERAPI_KEY and PORT=8085 in mcp-server/.env
 
 # Start the server (runs on port 8085 by default)
 uv run python weather.py

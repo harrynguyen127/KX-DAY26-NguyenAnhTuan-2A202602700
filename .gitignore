@@ -7,3 +7,6 @@ venv/
 .adk/
 *.db
 **/.DS_Store
+.setup-cache/
+.python/
+.python-bin/

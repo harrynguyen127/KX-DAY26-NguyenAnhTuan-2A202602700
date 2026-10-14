@@ -5,14 +5,19 @@ chính file app này. Model chỉ QUYẾT ĐỊNH gọi tool nào; app mới là
 
 Cách chạy:
     pip install -r ../requirements.txt
-    export GEMINI_API_KEY=...
+    # Điền GEMINI_API_KEY trong file .env cùng thư mục
     python weather_function_calling.py
 """
 
+import os
+from pathlib import Path
+
+from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
-client = genai.Client()
+load_dotenv(Path(__file__).resolve().parent / ".env")
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 MODEL = "gemini-2.5-flash"
 
@@ -118,6 +123,6 @@ def run(prompt: str) -> str:
 
 
 if __name__ == "__main__":
-    question = "Thời tiết Hà Nội và Đà Nẵng hôm nay thế nào?"
+    question = "Hôm nay nên mặc gì ở Hà Nội?"
     print(f"User: {question}\n")
     print("Trả lời:", run(question))

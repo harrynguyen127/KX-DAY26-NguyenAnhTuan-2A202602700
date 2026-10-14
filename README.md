@@ -46,7 +46,7 @@ pip install -r requirements.txt
 cd 02-mcp-basics && python weather_client.py
 
 # Function Calling (cần Gemini API key)
-export GEMINI_API_KEY=...
+# Set GEMINI_API_KEY in 01-function-calling/.env
 cd 01-function-calling && python weather_function_calling.py
 
 # Production — Auth (2 terminal)
