@@ -1,0 +1,34 @@
+<meta charset="utf-8"><title>verify_setup.py ? captured output</title><body style="background:#171717;color:#eee;font:18px monospace;padding:25px"><h3>verify_setup.py ? captured process output</h3><pre>============================================================
+Weather Agent Setup Verification
+============================================================
+
+🔍 Checking environment configuration...
+✅ GOOGLE_API_KEY configured
+
+🔍 Checking dependencies...
+✅ Google ADK
+✅ Google Generative AI
+✅ MCP
+✅ FastMCP
+✅ python-dotenv
+✅ httpx
+
+🔍 Checking agent structure...
+✅ weather_agent/agent.py
+✅ weather_agent/__init__.py
+
+🔍 Checking MCP server connectivity...
+✅ MCP server reachable at http://localhost:8085/mcp (HTTP 406)
+
+🔍 Checking agent import...
+✅ Agent imported successfully: weather_agent
+   Model: gemini-2.5-flash
+
+============================================================
+✅ All checks passed!
+
+🚀 Ready to start!
+   Run: uv run adk web
+
+📍 Then open: http://localhost:8000
+</pre><p>Process exit code: 0</p>
